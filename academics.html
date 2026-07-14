@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Academics - Falalu &amp; Sons International</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeIn 0.3s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-on-surface":"#f0f1f2","on-primary-fixed":"#410000","on-primary-container":"#ff8371",
+            "background":"#fafafa","surface-container":"#f5f5f5","surface":"#ffffff",
+            "on-tertiary":"#ffffff","on-secondary":"#ffffff","primary-container":"#7f1d1d",
+            "outline":"#8e706c","secondary-fixed":"#92fa83","on-secondary-container":"#00730d",
+            "surface-container-high":"#eeeeee","primary-fixed-dim":"#ffb4a8","primary":"#5e0000",
+            "secondary":"#006e0c","on-primary":"#ffffff","surface-container-highest":"#e5e5e5",
+            "tertiary-fixed-dim":"#e9c349","on-tertiary-fixed-variant":"#574500",
+            "surface-container-low":"#f9f9f9","on-secondary-fixed-variant":"#005307",
+            "secondary-container":"#8ff780","surface-dim":"#e0e0e0","tertiary-fixed":"#ffe088",
+            "primary-fixed":"#ffdad4","secondary-fixed-dim":"#77dd6a","on-surface-variant":"#5a413d",
+            "inverse-surface":"#2e3132","on-tertiary-container":"#4e3d00","outline-variant":"#e2bfb9",
+            "on-surface":"#171717","surface-tint":"#b22b1d","tertiary":"#735c00",
+            "on-error":"#ffffff","on-background":"#171717","on-secondary-fixed":"#002201",
+            "on-error-container":"#93000a","inverse-primary":"#ffb4a8","tertiary-container":"#cba72f",
+            "error-container":"#ffdad6","on-primary-fixed-variant":"#8f0f07","error":"#ba1a1a",
+            "on-tertiary-fixed":"#241a00","surface-variant":"#f5f5f5","surface-bright":"#ffffff",
+            "surface-container-lowest":"#ffffff"
+          },
+          borderRadius: { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
+          spacing: { "gutter": "24px", "margin-desktop": "40px", "margin-mobile": "16px", "base": "8px", "container-max": "1200px" },
+          fontFamily: {
+            "label-sm": ["Inter"], "headline-md": ["Playfair Display"], "display-lg-mobile": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"], "body-lg": ["Inter"], "body-md": ["Inter"],
+            "label-md": ["Inter"], "display-lg": ["Playfair Display"], "title-lg": ["Inter"]
+          },
+          fontSize: {
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+            "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+            "display-lg-mobile": ["36px", { lineHeight: "44px", fontWeight: "700" }],
+            "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+            "display-lg": ["52px", { lineHeight: "62px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "title-lg": ["20px", { lineHeight: "28px", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background antialiased flex flex-col min-h-screen">
+
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md border-b border-gray-200/50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-12 py-4">
+    <a href="index.html" class="text-xl md:text-2xl font-headline-sm font-bold text-primary tracking-tight">Falalu &amp; Sons</a>
+    <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-on-surface-variant">
+      <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+      <a href="about.html" class="hover:text-primary transition-colors">About</a>
+      <a href="admissions.html" class="hover:text-primary transition-colors">Admissions</a>
+      <a href="academics.html" class="text-primary border-b-2 border-primary pb-1">Academics</a>
+      <a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a>
+      <a href="news.html" class="hover:text-primary transition-colors">News</a>
+      <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="admissions.html" class="hidden sm:inline-flex items-center bg-primary text-on-primary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-container transition-colors shadow-sm">Apply Now</a>
+      <button id="mobile-menu-btn" class="lg:hidden text-on-surface p-2"><span class="material-symbols-outlined text-3xl">menu</span></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="lg:hidden hidden absolute top-full left-0 w-full bg-surface border-b border-gray-200/50 shadow-lg px-6 py-4 flex flex-col space-y-4">
+    <a href="index.html" class="text-on-surface-variant">Home</a>
+    <a href="about.html" class="text-on-surface-variant">About</a>
+    <a href="admissions.html" class="text-on-surface-variant">Admissions</a>
+    <a href="academics.html" class="text-primary font-semibold">Academics</a>
+    <a href="gallery.html" class="text-on-surface-variant">Gallery</a>
+    <a href="news.html" class="text-on-surface-variant">News</a>
+    <a href="contact.html" class="text-on-surface-variant">Contact</a>
+    <a href="admissions.html" class="bg-primary text-on-primary text-center py-2 rounded-full font-semibold mt-2">Apply Now</a>
+  </div>
+</header>
+
+<main class="flex-grow">
+  <!-- Header -->
+  <section class="pt-24 md:pt-32 pb-16 md:pb-24 px-6 md:px-12 max-w-4xl mx-auto text-center">
+    <h1 class="text-display-lg-mobile md:text-display-lg text-primary font-bold mb-6">Academic Excellence</h1>
+    <p class="text-body-lg text-gray-600 max-w-2xl mx-auto">Fostering growth through a rigorous, comprehensive curriculum designed to nurture intellectual curiosity and moral integrity from Early Years to Secondary School.</p>
+  </section>
+
+  <!-- Curriculum Overview -->
+  <section class="py-16 md:py-24 max-w-7xl mx-auto px-6 md:px-12">
+    <h2 class="text-headline-md font-headline-md text-primary mb-12 text-center">Our Curriculum</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="md:col-span-2 bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-100 relative overflow-hidden group">
+        <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+          <span class="material-symbols-outlined text-9xl text-primary">school</span>
+        </div>
+        <h3 class="text-headline-sm font-semibold text-primary mb-4 relative z-10">A Holistic Approach</h3>
+        <p class="text-gray-600 mb-6 relative z-10 leading-relaxed">Our curriculum seamlessly blends national educational standards with international best practices. We focus on critical thinking, problem-solving, and character development, enriched with co-curricular activities to discover every child's unique talents.</p>
+        <a href="#" class="inline-flex items-center text-primary font-semibold text-sm hover:text-primary-container transition-colors relative z-10">
+          Download Curriculum Guide <span class="material-symbols-outlined ml-1 text-sm">download</span>
+        </a>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col justify-center">
+        <span class="material-symbols-outlined text-4xl text-secondary mb-4">analytics</span>
+        <h3 class="text-title-lg font-semibold text-on-surface mb-2">Continuous Assessment</h3>
+        <p class="text-sm text-gray-600">Regular, constructive feedback helps students track progress and educators tailor methods.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col justify-center">
+        <span class="material-symbols-outlined text-4xl text-secondary mb-4">computer</span>
+        <h3 class="text-title-lg font-semibold text-on-surface mb-2">Digital Learning</h3>
+        <p class="text-sm text-gray-600">Smart classrooms and modern labs equip students with 21st-century digital literacy skills.</p>
+      </div>
+      <div class="md:col-span-2 bg-white rounded-2xl p-8 shadow-sm border border-gray-100 flex items-center gap-6">
+        <div class="bg-primary/10 p-4 rounded-2xl text-primary shrink-0">
+          <span class="material-symbols-outlined text-3xl">menu_book</span>
+        </div>
+        <div>
+          <h3 class="text-title-lg font-semibold text-on-surface mb-2">Moral &amp; Ethical Foundation</h3>
+          <p class="text-sm text-gray-600">Rooted in strong values, our program incorporates comprehensive moral instruction to build responsible, compassionate global citizens.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academic Levels & Subjects (Tabs) -->
+  <section class="py-16 md:py-24 bg-gray-50 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-headline-md font-headline-md text-primary mb-12 text-center">Academic Levels &amp; Subjects</h2>
+      <div class="flex justify-center mb-10 border-b border-gray-200 overflow-x-auto">
+        <button class="tab-btn px-6 py-3 text-base font-semibold border-b-2 border-primary text-primary transition-colors whitespace-nowrap" data-target="nursery">Nursery</button>
+        <button class="tab-btn px-6 py-3 text-base font-semibold border-b-2 border-transparent text-gray-500 hover:text-primary transition-colors whitespace-nowrap" data-target="primary">Primary</button>
+        <button class="tab-btn px-6 py-3 text-base font-semibold border-b-2 border-transparent text-gray-500 hover:text-primary transition-colors whitespace-nowrap" data-target="secondary">Secondary</button>
+      </div>
+
+      <div class="tab-content active" id="nursery">
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <h3 class="text-headline-sm font-semibold text-on-surface mb-4">Early Years Foundation</h3>
+            <p class="text-gray-600 mb-6">Our Nursery program provides a nurturing, play-based environment where young minds begin their educational journey. We focus on social skills, basic literacy, numeracy, and creative expression.</p>
+            <div class="flex gap-3 flex-wrap">
+              <span class="bg-secondary/10 text-secondary px-4 py-2 rounded-full text-xs font-semibold">Ages 3-5</span>
+              <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-semibold">Play-based Learning</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-8 border-t-4 border-t-primary shadow-sm">
+            <h4 class="text-title-lg font-semibold text-on-surface mb-6 flex items-center gap-2"><span class="material-symbols-outlined text-primary">menu_book</span> Core Areas</h4>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> Literacy &amp; Phonics</li>
+              <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> Numeracy &amp; Shapes</li>
+              <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> Knowledge of the World</li>
+              <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> Expressive Arts &amp; Design</li>
+              <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> Physical Development</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="primary">
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <h3 class="text-headline-sm font-semibold text-on-surface mb-4">Primary Education</h3>
+            <p class="text-gray-600 mb-6">Building on the foundation, the Primary years focus on structured learning, critical thinking, and collaborative projects. Students explore a broader range of subjects in depth.</p>
+            <div class="flex gap-3 flex-wrap">
+              <span class="bg-secondary/10 text-secondary px-4 py-2 rounded-full text-xs font-semibold">Ages 6-11</span>
+              <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-semibold">Structured Curriculum</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-8 border-t-4 border-t-primary shadow-sm">
+            <h4 class="text-title-lg font-semibold text-on-surface mb-6 flex items-center gap-2"><span class="material-symbols-outlined text-primary">menu_book</span> Subjects Offered</h4>
+            <div class="grid grid-cols-2 gap-4">
+              <ul class="space-y-4">
+                <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> English Language</li>
+                <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> Mathematics</li>
+                <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> Basic Science</li>
+                <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> Social Studies</li>
+              </ul>
+              <ul class="space-y-4">
+                <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> Civic Education</li>
+                <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> Computer Studies (ICT)</li>
+                <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> French / Arabic</li>
+                <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> Fine Art</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="secondary">
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <h3 class="text-headline-sm font-semibold text-on-surface mb-4">Secondary Education</h3>
+            <p class="text-gray-600 mb-6">Preparing students for higher education and global challenges. Our Secondary curriculum is rigorous, offering specialized streams in Sciences, Arts, and Commercial subjects.</p>
+            <div class="flex gap-3 flex-wrap">
+              <span class="bg-secondary/10 text-secondary px-4 py-2 rounded-full text-xs font-semibold">Ages 11-17</span>
+              <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-semibold">Specialized Streams</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-8 border-t-4 border-t-primary shadow-sm">
+            <h4 class="text-title-lg font-semibold text-on-surface mb-6 flex items-center gap-2"><span class="material-symbols-outlined text-primary">menu_book</span> Core &amp; Elective Subjects</h4>
+            <div class="grid grid-cols-2 gap-4">
+              <ul class="space-y-4">
+                <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> English &amp; Math</li>
+                <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> Physics, Chemistry, Biology</li>
+                <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> Economics</li>
+                <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> Government</li>
+              </ul>
+              <ul class="space-y-4">
+                <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> Accounting</li>
+                <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> Literature in English</li>
+                <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> Further Math</li>
+                <li class="flex items-center gap-3 text-gray-600"><span class="w-2 h-2 rounded-full bg-secondary"></span> Technical Drawing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements & Calendar -->
+  <section class="py-24 md:py-32 max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="bg-primary/10 p-3 rounded-2xl text-primary"><span class="material-symbols-outlined text-3xl">emoji_events</span></div>
+        <h2 class="text-headline-sm font-semibold text-on-surface">Academic Achievements</h2>
+      </div>
+      <ul class="space-y-6">
+        <li class="flex gap-4">
+          <div class="text-primary font-bold text-xl">2023</div>
+          <div><h4 class="text-sm font-semibold text-on-surface mb-1">100% WAEC Success Rate</h4><p class="text-sm text-gray-600">All graduating senior students achieved credits in core subjects.</p></div>
+        </li>
+        <li class="flex gap-4">
+          <div class="text-primary font-bold text-xl">2022</div>
+          <div><h4 class="text-sm font-semibold text-on-surface mb-1">State Science Olympiad Winners</h4><p class="text-sm text-gray-600">First place in the regional inter-school science competition.</p></div>
+        </li>
+        <li class="flex gap-4">
+          <div class="text-primary font-bold text-xl">2021</div>
+          <div><h4 class="text-sm font-semibold text-on-surface mb-1">National Essay Competition</h4><p class="text-sm text-gray-600">Top 5 finalists in the national junior secondary essay contest.</p></div>
+        </li>
+      </ul>
+    </div>
+    <div class="bg-primary rounded-2xl p-8 text-on-primary flex flex-col justify-center items-center text-center relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, #fff 10px, #fff 20px);"></div>
+      <span class="material-symbols-outlined text-6xl mb-6 relative z-10">calendar_month</span>
+      <h2 class="text-headline-sm font-semibold mb-4 relative z-10">Academic Calendar</h2>
+      <p class="text-sm text-on-primary/80 mb-8 relative z-10 max-w-sm">Stay up-to-date with term dates, holidays, exam schedules, and important school events.</p>
+      <a href="#" class="inline-flex items-center bg-white text-primary px-8 py-3 rounded-full font-semibold text-sm hover:bg-gray-100 transition-colors shadow-sm relative z-10">
+        Download PDF <span class="material-symbols-outlined ml-2 text-sm">download</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-white border-t border-gray-100 mt-auto">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="col-span-1 md:col-span-2">
+      <h3 class="text-xl font-bold text-primary mb-4">Falalu &amp; Sons International</h3>
+      <p class="text-sm text-gray-500 max-w-xs">Excellence in education, character in life.</p>
+    </div>
+    <div>
+      <h4 class="text-sm font-semibold text-on-surface mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+        <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+        <li><a href="admissions.html" class="hover:text-primary transition-colors">Admissions</a></li>
+        <li><a href="academics.html" class="hover:text-primary transition-colors">Academics</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-sm font-semibold text-on-surface mb-4">More</h4>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="news.html" class="hover:text-primary transition-colors">School News</a></li>
+        <li><a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a></li>
+        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact Us</a></li>
+        <li><a href="#" class="hover:text-primary transition-colors">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-gray-100 py-4 text-center text-xs text-gray-400">
+    © 2024 Falalu and Sons International School Minna. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  });
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.remove('border-primary','text-primary');
+        b.classList.add('border-transparent','text-gray-500');
+      });
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.remove('border-transparent','text-gray-500');
+      btn.classList.add('border-primary','text-primary');
+      document.getElementById(btn.dataset.target).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

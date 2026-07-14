@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Contact Us - Falalu and Sons International School Minna</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-on-surface":"#f0f1f2","on-primary-fixed":"#410000","on-primary-container":"#ff8371",
+            "background":"#fafafa","surface-container":"#f5f5f5","surface":"#ffffff",
+            "on-tertiary":"#ffffff","on-secondary":"#ffffff","primary-container":"#7f1d1d",
+            "outline":"#8e706c","secondary-fixed":"#92fa83","on-secondary-container":"#00730d",
+            "surface-container-high":"#eeeeee","primary-fixed-dim":"#ffb4a8","primary":"#5e0000",
+            "secondary":"#006e0c","on-primary":"#ffffff","surface-container-highest":"#e5e5e5",
+            "tertiary-fixed-dim":"#e9c349","on-tertiary-fixed-variant":"#574500",
+            "surface-container-low":"#f9f9f9","on-secondary-fixed-variant":"#005307",
+            "secondary-container":"#8ff780","surface-dim":"#e0e0e0","tertiary-fixed":"#ffe088",
+            "primary-fixed":"#ffdad4","secondary-fixed-dim":"#77dd6a","on-surface-variant":"#5a413d",
+            "inverse-surface":"#2e3132","on-tertiary-container":"#4e3d00","outline-variant":"#e2bfb9",
+            "on-surface":"#171717","surface-tint":"#b22b1d","tertiary":"#735c00",
+            "on-error":"#ffffff","on-background":"#171717","on-secondary-fixed":"#002201",
+            "on-error-container":"#93000a","inverse-primary":"#ffb4a8","tertiary-container":"#cba72f",
+            "error-container":"#ffdad6","on-primary-fixed-variant":"#8f0f07","error":"#ba1a1a",
+            "on-tertiary-fixed":"#241a00","surface-variant":"#f5f5f5","surface-bright":"#ffffff",
+            "surface-container-lowest":"#ffffff"
+          },
+          borderRadius: { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
+          spacing: { "gutter": "24px", "margin-desktop": "40px", "margin-mobile": "16px", "base": "8px", "container-max": "1200px" },
+          fontFamily: {
+            "label-sm": ["Inter"], "headline-md": ["Playfair Display"], "display-lg-mobile": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"], "body-lg": ["Inter"], "body-md": ["Inter"],
+            "label-md": ["Inter"], "display-lg": ["Playfair Display"], "title-lg": ["Inter"]
+          },
+          fontSize: {
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+            "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+            "display-lg-mobile": ["36px", { lineHeight: "44px", fontWeight: "700" }],
+            "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+            "display-lg": ["52px", { lineHeight: "62px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "title-lg": ["20px", { lineHeight: "28px", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background antialiased flex flex-col min-h-screen">
+
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md border-b border-gray-200/50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-12 py-4">
+    <a href="index.html" class="text-xl md:text-2xl font-headline-sm font-bold text-primary tracking-tight">Falalu &amp; Sons</a>
+    <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-on-surface-variant">
+      <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+      <a href="about.html" class="hover:text-primary transition-colors">About</a>
+      <a href="admissions.html" class="hover:text-primary transition-colors">Admissions</a>
+      <a href="academics.html" class="hover:text-primary transition-colors">Academics</a>
+      <a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a>
+      <a href="news.html" class="hover:text-primary transition-colors">News</a>
+      <a href="contact.html" class="text-primary border-b-2 border-primary pb-1">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="admissions.html" class="hidden sm:inline-flex items-center bg-primary text-on-primary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-container transition-colors shadow-sm">Apply Now</a>
+      <button id="mobile-menu-btn" class="lg:hidden text-on-surface p-2"><span class="material-symbols-outlined text-3xl">menu</span></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="lg:hidden hidden absolute top-full left-0 w-full bg-surface border-b border-gray-200/50 shadow-lg px-6 py-4 flex flex-col space-y-4">
+    <a href="index.html" class="text-on-surface-variant">Home</a>
+    <a href="about.html" class="text-on-surface-variant">About</a>
+    <a href="admissions.html" class="text-on-surface-variant">Admissions</a>
+    <a href="academics.html" class="text-on-surface-variant">Academics</a>
+    <a href="gallery.html" class="text-on-surface-variant">Gallery</a>
+    <a href="news.html" class="text-on-surface-variant">News</a>
+    <a href="contact.html" class="text-primary font-semibold">Contact</a>
+    <a href="admissions.html" class="bg-primary text-on-primary text-center py-2 rounded-full font-semibold mt-2">Apply Now</a>
+  </div>
+</header>
+
+<main class="flex-grow w-full max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 flex flex-col gap-16">
+  <section class="text-center max-w-3xl mx-auto">
+    <h1 class="text-display-lg-mobile md:text-display-lg font-bold text-primary mb-4">Get in Touch</h1>
+    <p class="text-body-lg text-gray-600">We are here to assist you with any inquiries regarding admissions, academics, or general school information. Reach out to our dedicated administrative team.</p>
+  </section>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <!-- Contact Info Cards -->
+    <div class="flex flex-col gap-6">
+      <div class="bg-white rounded-2xl p-6 flex items-start gap-4 shadow-sm border border-gray-100 hover:-translate-y-1 transition-transform">
+        <div class="bg-primary/10 p-3 rounded-2xl text-primary"><span class="material-symbols-outlined">location_on</span></div>
+        <div>
+          <h3 class="text-lg font-semibold text-on-surface mb-1">Campus Location</h3>
+          <p class="text-sm text-gray-600">123 Education Avenue,</p>
+          <p class="text-sm text-gray-600">Minna, Niger State, Nigeria</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-white rounded-2xl p-6 flex flex-col items-start gap-4 shadow-sm border border-gray-100 hover:-translate-y-1 transition-transform">
+          <div class="bg-secondary/10 p-3 rounded-2xl text-secondary"><span class="material-symbols-outlined">call</span></div>
+          <div>
+            <h3 class="text-base font-semibold text-on-surface mb-2">Phone</h3>
+            <p class="text-sm text-gray-600">+234 800 123 4567</p>
+            <p class="text-sm text-gray-600">+234 800 765 4321</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 flex flex-col items-start gap-4 shadow-sm border border-gray-100 hover:-translate-y-1 transition-transform">
+          <div class="bg-primary/10 p-3 rounded-2xl text-primary"><span class="material-symbols-outlined">mail</span></div>
+          <div>
+            <h3 class="text-base font-semibold text-on-surface mb-2">Email</h3>
+            <a class="text-sm text-primary hover:underline block" href="mailto:info@falaluandsons.edu.ng">info@falaluandsons.edu.ng</a>
+            <a class="text-sm text-primary hover:underline block mt-1" href="mailto:admissions@falaluandsons.edu.ng">admissions@...</a>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="mt-4 bg-white rounded-2xl p-4 flex items-center justify-between border border-gray-100 shadow-sm hover:bg-gray-50 transition-colors">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-gray-500">badge</span>
+          <span class="text-sm font-medium text-on-surface">Staff &amp; Administrative Directory</span>
+        </div>
+        <span class="material-symbols-outlined text-primary">chevron_right</span>
+      </a>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+      <h2 class="text-headline-sm font-semibold text-primary mb-6">Send us a Message</h2>
+      <form class="flex flex-col gap-5" onsubmit="event.preventDefault(); alert('Message sent!');">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-semibold text-gray-500 uppercase tracking-wider" for="name">Full Name</label>
+            <input class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-shadow" id="name" placeholder="e.g. John Doe" type="text" required/>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="text-xs font-semibold text-gray-500 uppercase tracking-wider" for="email">Email Address</label>
+            <input class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-shadow" id="email" placeholder="john@example.com" type="email" required/>
+          </div>
+        </div>
+        <div class="flex flex-col gap-1">
+          <label class="text-xs font-semibold text-gray-500 uppercase tracking-wider" for="subject">Subject</label>
+          <select class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-shadow appearance-none" id="subject">
+            <option>Admissions Inquiry</option>
+            <option>Academic Calendar</option>
+            <option>General Support</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="flex flex-col gap-1">
+          <label class="text-xs font-semibold text-gray-500 uppercase tracking-wider" for="message">Message</label>
+          <textarea class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-shadow resize-none" id="message" placeholder="How can we help you?" rows="4" required></textarea>
+        </div>
+        <button class="mt-2 bg-primary text-on-primary text-sm font-semibold px-6 py-3.5 rounded-xl hover:bg-primary-container transition-colors shadow-sm" type="submit">Submit Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Map Section -->
+  <section class="rounded-2xl overflow-hidden border border-gray-200 shadow-sm h-80 md:h-96 relative">
+    <img class="w-full h-full object-cover" alt="Map showing the location of Falalu & Sons campus in Minna, Nigeria" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6Tw_CrU5VfXYAIdkvvKqnScdKEcELFHNpafKFLo3_7OUiVSrwhG3rX7cYH0UmsA2Pk9z91xlCSq5Be1EGeQr2FZm2KZqvHj7Bz-Kch7dqxsyPhOb8ujdGIDMIvh5R-9JPjxB6Kgm_Rfb2poeA4LQ8UGJVckYzlah8vbnVPAubgdf_h16BlIKz4qn8bPz8iyPIFV_7aHIuxT7W10iM60ttCru7_6BXan084ZEE9r6UeovcoDssFlfUWwxmV7Z2Y3RFTpf2lwZ4CLo"/>
+    <div class="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent pointer-events-none flex flex-col justify-end p-6 md:p-8">
+      <div class="bg-white/90 backdrop-blur-sm p-4 rounded-xl inline-block w-max shadow-sm border border-gray-100">
+        <p class="text-sm font-medium text-on-surface flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-sm">directions</span>
+          Get Directions to Campus
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/2348001234567" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform z-50 flex items-center justify-center">
+  <span class="material-symbols-outlined text-3xl">forum</span>
+</a>
+
+<footer class="bg-white border-t border-gray-100 mt-auto">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="col-span-1 md:col-span-2">
+      <h3 class="text-xl font-bold text-primary mb-4">Falalu &amp; Sons International</h3>
+      <p class="text-sm text-gray-500 max-w-xs">Excellence in education, character in life.</p>
+      <div class="flex gap-4 mt-4">
+        <a href="#" class="text-gray-400 hover:text-primary transition-colors"><span class="material-symbols-outlined">share</span></a>
+        <a href="#" class="text-gray-400 hover:text-primary transition-colors"><span class="material-symbols-outlined">camera_alt</span></a>
+        <a href="#" class="text-gray-400 hover:text-primary transition-colors"><span class="material-symbols-outlined">video_library</span></a>
+      </div>
+    </div>
+    <div>
+      <h4 class="text-sm font-semibold text-on-surface mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+        <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+        <li><a href="admissions.html" class="hover:text-primary transition-colors">Admissions</a></li>
+        <li><a href="academics.html" class="hover:text-primary transition-colors">Academics</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-sm font-semibold text-on-surface mb-4">More</h4>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="news.html" class="hover:text-primary transition-colors">School News</a></li>
+        <li><a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a></li>
+        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact Us</a></li>
+        <li><a href="#" class="hover:text-primary transition-colors">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-gray-100 py-4 text-center text-xs text-gray-400">
+    © 2024 Falalu and Sons International School Minna. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  });
+</script>
+</body>
+</html>

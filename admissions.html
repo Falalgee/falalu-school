@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Admissions - Falalu &amp; Sons International School Minna</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-on-surface":"#f0f1f2","on-primary-fixed":"#410000","on-primary-container":"#ff8371",
+            "background":"#fafafa","surface-container":"#f5f5f5","surface":"#ffffff",
+            "on-tertiary":"#ffffff","on-secondary":"#ffffff","primary-container":"#7f1d1d",
+            "outline":"#8e706c","secondary-fixed":"#92fa83","on-secondary-container":"#00730d",
+            "surface-container-high":"#eeeeee","primary-fixed-dim":"#ffb4a8","primary":"#5e0000",
+            "secondary":"#006e0c","on-primary":"#ffffff","surface-container-highest":"#e5e5e5",
+            "tertiary-fixed-dim":"#e9c349","on-tertiary-fixed-variant":"#574500",
+            "surface-container-low":"#f9f9f9","on-secondary-fixed-variant":"#005307",
+            "secondary-container":"#8ff780","surface-dim":"#e0e0e0","tertiary-fixed":"#ffe088",
+            "primary-fixed":"#ffdad4","secondary-fixed-dim":"#77dd6a","on-surface-variant":"#5a413d",
+            "inverse-surface":"#2e3132","on-tertiary-container":"#4e3d00","outline-variant":"#e2bfb9",
+            "on-surface":"#171717","surface-tint":"#b22b1d","tertiary":"#735c00",
+            "on-error":"#ffffff","on-background":"#171717","on-secondary-fixed":"#002201",
+            "on-error-container":"#93000a","inverse-primary":"#ffb4a8","tertiary-container":"#cba72f",
+            "error-container":"#ffdad6","on-primary-fixed-variant":"#8f0f07","error":"#ba1a1a",
+            "on-tertiary-fixed":"#241a00","surface-variant":"#f5f5f5","surface-bright":"#ffffff",
+            "surface-container-lowest":"#ffffff"
+          },
+          borderRadius: { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
+          spacing: { "gutter": "24px", "margin-desktop": "40px", "margin-mobile": "16px", "base": "8px", "container-max": "1200px" },
+          fontFamily: {
+            "label-sm": ["Inter"], "headline-md": ["Playfair Display"], "display-lg-mobile": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"], "body-lg": ["Inter"], "body-md": ["Inter"],
+            "label-md": ["Inter"], "display-lg": ["Playfair Display"], "title-lg": ["Inter"]
+          },
+          fontSize: {
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+            "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+            "display-lg-mobile": ["36px", { lineHeight: "44px", fontWeight: "700" }],
+            "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+            "display-lg": ["52px", { lineHeight: "62px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "title-lg": ["20px", { lineHeight: "28px", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background antialiased flex flex-col min-h-screen">
+
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md border-b border-gray-200/50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-12 py-4">
+    <a href="index.html" class="text-xl md:text-2xl font-headline-sm font-bold text-primary tracking-tight">Falalu &amp; Sons</a>
+    <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-on-surface-variant">
+      <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+      <a href="about.html" class="hover:text-primary transition-colors">About</a>
+      <a href="admissions.html" class="text-primary border-b-2 border-primary pb-1">Admissions</a>
+      <a href="academics.html" class="hover:text-primary transition-colors">Academics</a>
+      <a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a>
+      <a href="news.html" class="hover:text-primary transition-colors">News</a>
+      <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="admissions.html" class="hidden sm:inline-flex items-center bg-primary text-on-primary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-container transition-colors shadow-sm">Apply Now</a>
+      <button id="mobile-menu-btn" class="lg:hidden text-on-surface p-2"><span class="material-symbols-outlined text-3xl">menu</span></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="lg:hidden hidden absolute top-full left-0 w-full bg-surface border-b border-gray-200/50 shadow-lg px-6 py-4 flex flex-col space-y-4">
+    <a href="index.html" class="text-on-surface-variant">Home</a>
+    <a href="about.html" class="text-on-surface-variant">About</a>
+    <a href="admissions.html" class="text-primary font-semibold">Admissions</a>
+    <a href="academics.html" class="text-on-surface-variant">Academics</a>
+    <a href="gallery.html" class="text-on-surface-variant">Gallery</a>
+    <a href="news.html" class="text-on-surface-variant">News</a>
+    <a href="contact.html" class="text-on-surface-variant">Contact</a>
+    <a href="admissions.html" class="bg-primary text-on-primary text-center py-2 rounded-full font-semibold mt-2">Apply Now</a>
+  </div>
+</header>
+
+<main class="flex-grow">
+  <!-- Hero -->
+  <section class="relative py-24 md:py-36 px-6 overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-10">
+      <div class="bg-cover bg-center w-full h-full" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwgPrXsuzO5wcw5UK3nUR7XaCoheiZX7eC-juXIUvE9E9QXNLCyl4wWH5-cQs5l9p8S8tGQ4EkkD24VRVrU3vlzX-uXhlBeg81og-cTp9942WpMqwNu1XoY1LO0SB_B7XDWuq_shDitoEY2rPmcIwFkGRZ0-QYScIzcAxaMWjMNLAPMhfbsKd12ggVA9VyrlPF9sQj_uaqIXrJyazW1XO6_fx6Wju88GAk0oQUJM2CpTh4wfj33O-efSxWXkk29uGxPwnUzl1OVzo');"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <span class="inline-block bg-amber-100 text-amber-800 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider mb-6">Join Our Community</span>
+      <h1 class="text-display-lg-mobile md:text-display-lg font-bold text-on-surface mb-6">Begin Your Academic Journey</h1>
+      <p class="text-body-lg text-gray-600 max-w-2xl mx-auto mb-10">At Falalu and Sons International School Minna, we welcome students who are eager to learn, grow, and achieve excellence in a nurturing and disciplined environment.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#" class="inline-flex items-center bg-primary text-on-primary px-8 py-4 rounded-full font-semibold text-sm hover:bg-primary-container transition-colors shadow-sm">
+          Apply Online <span class="material-symbols-outlined ml-2">arrow_forward</span>
+        </a>
+        <a href="#" class="inline-flex items-center border border-gray-300 text-primary px-8 py-4 rounded-full font-semibold text-sm hover:bg-gray-50 transition-colors">
+          <span class="material-symbols-outlined mr-2">download</span> Download Form (PDF)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admission Process -->
+  <section class="py-24 md:py-32 bg-gray-50 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto text-center mb-16">
+      <h2 class="text-headline-md font-headline-md text-on-surface mb-4">The Admission Process</h2>
+      <p class="text-body-md text-gray-600 max-w-2xl mx-auto">A straightforward path to joining our esteemed institution. Follow these four simple steps.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:-translate-y-1 transition-transform">
+        <div class="w-12 h-12 bg-primary-fixed text-on-primary-fixed rounded-xl flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined">info</span>
+        </div>
+        <div class="text-primary font-bold text-2xl mb-2">01</div>
+        <h3 class="font-title-lg font-semibold text-on-surface mb-3">Inquiry</h3>
+        <p class="text-sm text-gray-600">Reach out to our admissions team to learn more about our curriculum, facilities, and values.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:-translate-y-1 transition-transform">
+        <div class="w-12 h-12 bg-secondary-fixed text-on-secondary-fixed rounded-xl flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined">description</span>
+        </div>
+        <div class="text-primary font-bold text-2xl mb-2">02</div>
+        <h3 class="font-title-lg font-semibold text-on-surface mb-3">Application</h3>
+        <p class="text-sm text-gray-600">Submit your application online or download the PDF form with all required documents.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:-translate-y-1 transition-transform">
+        <div class="w-12 h-12 bg-tertiary-fixed text-on-tertiary-fixed rounded-xl flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined">assignment</span>
+        </div>
+        <div class="text-primary font-bold text-2xl mb-2">03</div>
+        <h3 class="font-title-lg font-semibold text-on-surface mb-3">Assessment</h3>
+        <p class="text-sm text-gray-600">Prospective students undergo a standard academic assessment for proper placement.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:-translate-y-1 transition-transform">
+        <div class="w-12 h-12 bg-primary-fixed-dim text-on-primary-fixed-variant rounded-xl flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined">school</span>
+        </div>
+        <div class="text-primary font-bold text-2xl mb-2">04</div>
+        <h3 class="font-title-lg font-semibold text-on-surface mb-3">Enrollment</h3>
+        <p class="text-sm text-gray-600">Upon success, receive your offer letter and complete the enrollment process to join us.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-white border-t border-gray-100 mt-auto">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="col-span-1 md:col-span-2">
+      <h3 class="text-xl font-bold text-primary mb-4">Falalu &amp; Sons International</h3>
+      <p class="text-sm text-gray-500 max-w-xs">Excellence in education, character in life.</p>
+    </div>
+    <div>
+      <h4 class="text-sm font-semibold text-on-surface mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+        <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+        <li><a href="admissions.html" class="hover:text-primary transition-colors">Admissions</a></li>
+        <li><a href="academics.html" class="hover:text-primary transition-colors">Academics</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-sm font-semibold text-on-surface mb-4">More</h4>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="news.html" class="hover:text-primary transition-colors">School News</a></li>
+        <li><a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a></li>
+        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact Us</a></li>
+        <li><a href="#" class="hover:text-primary transition-colors">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-gray-100 py-4 text-center text-xs text-gray-400">
+    © 2024 Falalu and Sons International School Minna. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  });
+</script>
+</body>
+</html>

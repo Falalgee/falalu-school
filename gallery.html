@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Gallery - Falalu &amp; Sons International School Minna</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .filter-btn.active { background-color: #5e0000; color: #ffffff; border-color: #5e0000; }
+    .gallery-item { transition: all 0.3s ease; }
+    .gallery-item:hover .overlay { opacity: 1; }
+    .overlay { opacity: 0; transition: opacity 0.3s ease; background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0)); }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-on-surface":"#f0f1f2","on-primary-fixed":"#410000","on-primary-container":"#ff8371",
+            "background":"#fafafa","surface-container":"#f5f5f5","surface":"#ffffff",
+            "on-tertiary":"#ffffff","on-secondary":"#ffffff","primary-container":"#7f1d1d",
+            "outline":"#8e706c","secondary-fixed":"#92fa83","on-secondary-container":"#00730d",
+            "surface-container-high":"#eeeeee","primary-fixed-dim":"#ffb4a8","primary":"#5e0000",
+            "secondary":"#006e0c","on-primary":"#ffffff","surface-container-highest":"#e5e5e5",
+            "tertiary-fixed-dim":"#e9c349","on-tertiary-fixed-variant":"#574500",
+            "surface-container-low":"#f9f9f9","on-secondary-fixed-variant":"#005307",
+            "secondary-container":"#8ff780","surface-dim":"#e0e0e0","tertiary-fixed":"#ffe088",
+            "primary-fixed":"#ffdad4","secondary-fixed-dim":"#77dd6a","on-surface-variant":"#5a413d",
+            "inverse-surface":"#2e3132","on-tertiary-container":"#4e3d00","outline-variant":"#e2bfb9",
+            "on-surface":"#171717","surface-tint":"#b22b1d","tertiary":"#735c00",
+            "on-error":"#ffffff","on-background":"#171717","on-secondary-fixed":"#002201",
+            "on-error-container":"#93000a","inverse-primary":"#ffb4a8","tertiary-container":"#cba72f",
+            "error-container":"#ffdad6","on-primary-fixed-variant":"#8f0f07","error":"#ba1a1a",
+            "on-tertiary-fixed":"#241a00","surface-variant":"#f5f5f5","surface-bright":"#ffffff",
+            "surface-container-lowest":"#ffffff"
+          },
+          borderRadius: { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
+          spacing: { "gutter": "24px", "margin-desktop": "40px", "margin-mobile": "16px", "base": "8px", "container-max": "1200px" },
+          fontFamily: {
+            "label-sm": ["Inter"], "headline-md": ["Playfair Display"], "display-lg-mobile": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"], "body-lg": ["Inter"], "body-md": ["Inter"],
+            "label-md": ["Inter"], "display-lg": ["Playfair Display"], "title-lg": ["Inter"]
+          },
+          fontSize: {
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+            "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+            "display-lg-mobile": ["36px", { lineHeight: "44px", fontWeight: "700" }],
+            "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+            "display-lg": ["52px", { lineHeight: "62px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "title-lg": ["20px", { lineHeight: "28px", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background antialiased flex flex-col min-h-screen">
+
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md border-b border-gray-200/50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-12 py-4">
+    <a href="index.html" class="text-xl md:text-2xl font-headline-sm font-bold text-primary tracking-tight">Falalu &amp; Sons</a>
+    <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-on-surface-variant">
+      <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+      <a href="about.html" class="hover:text-primary transition-colors">About</a>
+      <a href="admissions.html" class="hover:text-primary transition-colors">Admissions</a>
+      <a href="academics.html" class="hover:text-primary transition-colors">Academics</a>
+      <a href="gallery.html" class="text-primary border-b-2 border-primary pb-1">Gallery</a>
+      <a href="news.html" class="hover:text-primary transition-colors">News</a>
+      <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="admissions.html" class="hidden sm:inline-flex items-center bg-primary text-on-primary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-container transition-colors shadow-sm">Apply Now</a>
+      <button id="mobile-menu-btn" class="lg:hidden text-on-surface p-2"><span class="material-symbols-outlined text-3xl">menu</span></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="lg:hidden hidden absolute top-full left-0 w-full bg-surface border-b border-gray-200/50 shadow-lg px-6 py-4 flex flex-col space-y-4">
+    <a href="index.html" class="text-on-surface-variant">Home</a>
+    <a href="about.html" class="text-on-surface-variant">About</a>
+    <a href="admissions.html" class="text-on-surface-variant">Admissions</a>
+    <a href="academics.html" class="text-on-surface-variant">Academics</a>
+    <a href="gallery.html" class="text-primary font-semibold">Gallery</a>
+    <a href="news.html" class="text-on-surface-variant">News</a>
+    <a href="contact.html" class="text-on-surface-variant">Contact</a>
+    <a href="admissions.html" class="bg-primary text-on-primary text-center py-2 rounded-full font-semibold mt-2">Apply Now</a>
+  </div>
+</header>
+
+<main class="flex-grow">
+  <section class="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto text-center">
+    <h1 class="text-display-lg-mobile md:text-display-lg font-bold text-primary mb-4">Our Gallery</h1>
+    <p class="text-body-lg text-gray-600 max-w-2xl mx-auto">Explore moments of growth, excellence, and community at Falalu and Sons International School Minna.</p>
+  </section>
+
+  <!-- Filters -->
+  <section class="max-w-7xl mx-auto px-6 md:px-12 mb-12">
+    <div class="flex flex-wrap justify-center gap-3" id="filter-container">
+      <button class="filter-btn active px-5 py-2 rounded-full border border-gray-300 text-sm font-semibold transition-colors" data-filter="all">All</button>
+      <button class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-semibold text-gray-600 hover:bg-gray-100 transition-colors" data-filter="buildings">School Buildings</button>
+      <button class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-semibold text-gray-600 hover:bg-gray-100 transition-colors" data-filter="classrooms">Classrooms</button>
+      <button class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-semibold text-gray-600 hover:bg-gray-100 transition-colors" data-filter="sports">Sports</button>
+      <button class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-semibold text-gray-600 hover:bg-gray-100 transition-colors" data-filter="graduation">Graduation</button>
+      <button class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-semibold text-gray-600 hover:bg-gray-100 transition-colors" data-filter="cultural">Cultural Activities</button>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="max-w-7xl mx-auto px-6 md:px-12 mb-24">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+      <div class="gallery-item rounded-2xl overflow-hidden relative shadow-sm cursor-pointer group" data-category="buildings">
+        <img class="w-full h-80 object-cover" alt="Grand main academic block with modern architecture and manicured lawns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNqsEFvZ9b9OyXTN1w12-9H2kcl7o2A2ZQwiBtS3udK2GK3CrkaEAwAAH7LpGscGyJsmU754lg1OvXR08pktYjVQ4U7JtFd5yj7yF8inlLk3AUNA4xvpOaP8AF-axMqZchiNRaHYQyaC4t2IsSFLP8PxeEyMCfa3It6Dcxrq2dnRETpWSjZbdyl-UmLutnkaachlXZXi123u1qJXwFKNz1kIADH3mytxClqI7bcctvKZ6QMTpltXGXiqkWDVITy8wF_sotR9ArdN8"/>
+        <div class="overlay absolute inset-0 flex flex-col justify-end p-6">
+          <span class="bg-primary/90 text-on-primary text-xs font-semibold px-3 py-1 rounded-full w-max mb-2">School Buildings</span>
+          <h3 class="text-white font-semibold text-lg">Main Academic Block</h3>
+        </div>
+      </div>
+      <div class="gallery-item rounded-2xl overflow-hidden relative shadow-sm cursor-pointer group" data-category="classrooms">
+        <img class="w-full h-80 object-cover" alt="Bright, modern classroom with interactive whiteboards and engaged students" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBanOvznJyozuQsH5Hm0yLrcQV1e3pXS-qdTOo5Bl91YNTCJ87x4raYdXKZM8U0dgOen3C7f2Bw7Ehd3lvb4zKeQ15QXOJHSzRiRTmAt6XLJD-ZPmKena6LKwMzeLNXKuh08gQVeiLhs2HMVIGhILsLe1L5ktLUuF4HEDLT_CHf3wHSf8ciJ56RNAxCcWeg5Xn1BvqceU-QBjvEJXBA0_aqSOkq2AUw_uoJXlgZdolTViKKIPGKgZH46IrNo9MSR3TRAuaBsmI3Ch0"/>
+        <div class="overlay absolute inset-0 flex flex-col justify-end p-6">
+          <span class="bg-secondary/90 text-white text-xs font-semibold px-3 py-1 rounded-full w-max mb-2">Classrooms</span>
+          <h3 class="text-white font-semibold text-lg">Interactive Science Lab</h3>
+        </div>
+      </div>
+      <div class="gallery-item rounded-2xl overflow-hidden relative shadow-sm cursor-pointer group" data-category="sports">
+        <img class="w-full h-80 object-cover" alt="Students competing in football on a pristine green field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMuAKzDmp6tP1KTy6IE38HkcwLeKMZhVyN0p3dH4zMNlZr0JE66MjtwzTrvwYumw3vzvCPklXomeVyXnkheQh8E6nr2Kr7iCLx_QYrBcmRfWb_UfEPJSrQTb-R12Y6hHav1dXj5gfsU7j3qBtsbCuInJ4ViuyrZNtFxsaQ1Fwo798wo4INejB161ixz0SeMgpnL_FAiFw1C3lnsYXFMEFBVk5_s8RR_z1rKN2jUfqzvBnv7zcuC4F0QXLc3hjRHQZNd0wyOFNwdqE"/>
+        <div class="overlay absolute inset-0 flex flex-col justify-end p-6">
+          <span class="bg-tertiary-container/90 text-on-tertiary-container text-xs font-semibold px-3 py-1 rounded-full w-max mb-2">Sports</span>
+          <h3 class="text-white font-semibold text-lg">Annual Sports Meet</h3>
+        </div>
+      </div>
+      <div class="gallery-item rounded-2xl overflow-hidden relative shadow-sm cursor-pointer group" data-category="graduation">
+        <img class="w-full h-80 object-cover" alt="Joyful graduates throwing caps in the air" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDArWWJBNC4_ACb_s4eIC8vN87u5N_Ydorc-CnwJKm2xlrm_28ZGxaKokGv-rERUGfW_DLrVAPsm5Yh0NQanlgRQwmAiYOmM_mqUqk4ufWN44kPqrEnxiSt0SyXUtMQwqQ-4vQ8wWotN9fLySxw8_Tk5sk4448q4NMvrGmS2cNyhvaJLpYw_Dm3kB3f_XXDQ92cuLt0cvmu05sl8SbWDpR9fA2lIZnRpPOXKhJlievHevsL0ldYW6o1O1HQzDvoOCVkmzw9wpTuPHI"/>
+        <div class="overlay absolute inset-0 flex flex-col justify-end p-6">
+          <span class="bg-primary/90 text-on-primary text-xs font-semibold px-3 py-1 rounded-full w-max mb-2">Graduation</span>
+          <h3 class="text-white font-semibold text-lg">Class of 2023 Ceremony</h3>
+        </div>
+      </div>
+      <div class="gallery-item rounded-2xl overflow-hidden relative shadow-sm cursor-pointer group" data-category="cultural">
+        <img class="w-full h-80 object-cover" alt="Students performing vibrant traditional dance at cultural festival" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCis4Uka5nWaa_KWt9hr4tjtV_wgtuY9RJbAxfwKNNvn7dhXzsJxOmAOJl7Y2Qcn-iY7CQ5uN3TnMIJMVGbgAT6Sc6sNVV-C0-saJNWBO2qsFnYs8VgB8J0-CA1EoWAyLSoB6YrTwkK2snA_Losb2JIfwQY7Cg2hkOW72gRAozgX-IWYqixyKGTZyubMfaotkdySkKwhOrmRpFlRdpxtHMvRjh5_fhRQGcfidiJY6KgHLL1jBa_q8nV5rFXagb4MXrPL_ke8504zv0"/>
+        <div class="overlay absolute inset-0 flex flex-col justify-end p-6">
+          <span class="bg-secondary-container/90 text-on-secondary-container text-xs font-semibold px-3 py-1 rounded-full w-max mb-2">Cultural Activities</span>
+          <h3 class="text-white font-semibold text-lg">Heritage Day Festival</h3>
+        </div>
+      </div>
+      <div class="gallery-item rounded-2xl overflow-hidden relative shadow-sm cursor-pointer group" data-category="buildings">
+        <img class="w-full h-80 object-cover" alt="Serene modern library interior with tall bookshelves and reading areas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIZlz_9yc0HeFfE3LbHEAc-B4dtDCKhhNyCUtck4RJ9Ny_93hxCgdvg1pkZ_oU1xycJze7irwVHhG0DoOe6hxXf2-VHCO6Wz42hlpxjJOFwFezPTIQLeuqzzMce2K4FWnVRQIEmsniFRpFjDLW2YMYkTZeYSgdYOhUmlW46wzIfl8_HMb5Vs8cNoh7cA7l5eLoPasRxJXRj3BngJR6wk8WVZiZxL-h1Y6394bM8qMB_Ax4uhYv_XYUM7tdDzu1Brk0u4YlHlGzYns"/>
+        <div class="overlay absolute inset-0 flex flex-col justify-end p-6">
+          <span class="bg-primary/90 text-on-primary text-xs font-semibold px-3 py-1 rounded-full w-max mb-2">School Buildings</span>
+          <h3 class="text-white font-semibold text-lg">The Grand Library</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-gray-50 px-6 md:px-12 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-headline-md font-headline-md text-primary mb-4">Want to see more moments?</h2>
+      <p class="text-body-lg text-gray-600 mb-8">Follow us on social media for daily updates, student achievements, and live event coverage.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#" class="inline-flex items-center bg-primary text-on-primary px-8 py-3 rounded-full font-semibold text-sm hover:bg-primary-container transition-colors">
+          <span class="material-symbols-outlined mr-2">share</span> Follow on Instagram
+        </a>
+        <a href="#" class="inline-flex items-center border border-primary text-primary px-8 py-3 rounded-full font-semibold text-sm hover:bg-primary/5 transition-colors">
+          <span class="material-symbols-outlined mr-2">thumb_up</span> Like our Facebook Page
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-white border-t border-gray-100 mt-auto">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="col-span-1 md:col-span-2">
+      <h3 class="text-xl font-bold text-primary mb-4">Falalu &amp; Sons International</h3>
+      <p class="text-sm text-gray-500 max-w-xs">Excellence in education, character in life.</p>
+    </div>
+    <div>
+      <h4 class="text-sm font-semibold text-on-surface mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+        <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+        <li><a href="admissions.html" class="hover:text-primary transition-colors">Admissions</a></li>
+        <li><a href="academics.html" class="hover:text-primary transition-colors">Academics</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-sm font-semibold text-on-surface mb-4">More</h4>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="news.html" class="hover:text-primary transition-colors">School News</a></li>
+        <li><a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a></li>
+        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact Us</a></li>
+        <li><a href="#" class="hover:text-primary transition-colors">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-gray-100 py-4 text-center text-xs text-gray-400">
+    © 2024 Falalu and Sons International School Minna. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  });
+
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => { b.classList.remove('active', 'bg-primary', 'text-white'); b.classList.add('text-gray-600'); });
+      btn.classList.add('active', 'bg-primary', 'text-white');
+      btn.classList.remove('text-gray-600');
+      const filterValue = btn.getAttribute('data-filter');
+      galleryItems.forEach(item => {
+        item.style.display = (filterValue === 'all' || item.getAttribute('data-category') === filterValue) ? 'block' : 'none';
+      });
+    });
+  });
+
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      item.style.transform = 'scale(0.98)';
+      setTimeout(() => { item.style.transform = 'scale(1)'; alert("Lightbox view would open here."); }, 150);
+    });
+  });
+</script>
+</body>
+</html>

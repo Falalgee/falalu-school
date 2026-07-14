@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>News &amp; Events | Falalu and Sons International School</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-on-surface":"#f0f1f2","on-primary-fixed":"#410000","on-primary-container":"#ff8371",
+            "background":"#fafafa","surface-container":"#f5f5f5","surface":"#ffffff",
+            "on-tertiary":"#ffffff","on-secondary":"#ffffff","primary-container":"#7f1d1d",
+            "outline":"#8e706c","secondary-fixed":"#92fa83","on-secondary-container":"#00730d",
+            "surface-container-high":"#eeeeee","primary-fixed-dim":"#ffb4a8","primary":"#5e0000",
+            "secondary":"#006e0c","on-primary":"#ffffff","surface-container-highest":"#e5e5e5",
+            "tertiary-fixed-dim":"#e9c349","on-tertiary-fixed-variant":"#574500",
+            "surface-container-low":"#f9f9f9","on-secondary-fixed-variant":"#005307",
+            "secondary-container":"#8ff780","surface-dim":"#e0e0e0","tertiary-fixed":"#ffe088",
+            "primary-fixed":"#ffdad4","secondary-fixed-dim":"#77dd6a","on-surface-variant":"#5a413d",
+            "inverse-surface":"#2e3132","on-tertiary-container":"#4e3d00","outline-variant":"#e2bfb9",
+            "on-surface":"#171717","surface-tint":"#b22b1d","tertiary":"#735c00",
+            "on-error":"#ffffff","on-background":"#171717","on-secondary-fixed":"#002201",
+            "on-error-container":"#93000a","inverse-primary":"#ffb4a8","tertiary-container":"#cba72f",
+            "error-container":"#ffdad6","on-primary-fixed-variant":"#8f0f07","error":"#ba1a1a",
+            "on-tertiary-fixed":"#241a00","surface-variant":"#f5f5f5","surface-bright":"#ffffff",
+            "surface-container-lowest":"#ffffff"
+          },
+          borderRadius: { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
+          spacing: { "gutter": "24px", "margin-desktop": "40px", "margin-mobile": "16px", "base": "8px", "container-max": "1200px" },
+          fontFamily: {
+            "label-sm": ["Inter"], "headline-md": ["Playfair Display"], "display-lg-mobile": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"], "body-lg": ["Inter"], "body-md": ["Inter"],
+            "label-md": ["Inter"], "display-lg": ["Playfair Display"], "title-lg": ["Inter"]
+          },
+          fontSize: {
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+            "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+            "display-lg-mobile": ["36px", { lineHeight: "44px", fontWeight: "700" }],
+            "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+            "display-lg": ["52px", { lineHeight: "62px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "title-lg": ["20px", { lineHeight: "28px", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background antialiased flex flex-col min-h-screen">
+
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md border-b border-gray-200/50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-12 py-4">
+    <a href="index.html" class="text-xl md:text-2xl font-headline-sm font-bold text-primary tracking-tight">Falalu &amp; Sons</a>
+    <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-on-surface-variant">
+      <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+      <a href="about.html" class="hover:text-primary transition-colors">About</a>
+      <a href="admissions.html" class="hover:text-primary transition-colors">Admissions</a>
+      <a href="academics.html" class="hover:text-primary transition-colors">Academics</a>
+      <a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a>
+      <a href="news.html" class="text-primary border-b-2 border-primary pb-1">News</a>
+      <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="admissions.html" class="hidden sm:inline-flex items-center bg-primary text-on-primary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-container transition-colors shadow-sm">Apply Now</a>
+      <button id="mobile-menu-btn" class="lg:hidden text-on-surface p-2"><span class="material-symbols-outlined text-3xl">menu</span></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="lg:hidden hidden absolute top-full left-0 w-full bg-surface border-b border-gray-200/50 shadow-lg px-6 py-4 flex flex-col space-y-4">
+    <a href="index.html" class="text-on-surface-variant">Home</a>
+    <a href="about.html" class="text-on-surface-variant">About</a>
+    <a href="admissions.html" class="text-on-surface-variant">Admissions</a>
+    <a href="academics.html" class="text-on-surface-variant">Academics</a>
+    <a href="gallery.html" class="text-on-surface-variant">Gallery</a>
+    <a href="news.html" class="text-primary font-semibold">News</a>
+    <a href="contact.html" class="text-on-surface-variant">Contact</a>
+    <a href="admissions.html" class="bg-primary text-on-primary text-center py-2 rounded-full font-semibold mt-2">Apply Now</a>
+  </div>
+</header>
+
+<main class="flex-grow w-full max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24 space-y-16">
+  <section class="text-center space-y-4">
+    <h1 class="text-display-lg-mobile md:text-display-lg font-bold text-primary">School News &amp; Events</h1>
+    <p class="text-body-lg text-gray-600 max-w-2xl mx-auto">Stay updated with the latest announcements, upcoming events, and academic achievements from the Falalu and Sons community.</p>
+  </section>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <!-- Main Content -->
+    <div class="lg:col-span-8 space-y-8">
+      <h2 class="text-headline-sm font-semibold text-primary border-b border-gray-200 pb-2">Latest Announcements</h2>
+
+      <!-- Featured Post -->
+      <article class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow group cursor-pointer">
+        <div class="relative h-64 w-full bg-gray-100">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Students in science laboratory conducting experiments" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaYciY6P_qpaIXGzZ01NNqCkYJaoKSj6gCm4z7brdk1_IgmTcP8DXr8NgWOu-aEajGd-Qj-YVGA7onQoNIIe6Pm7rTuBkrwbVUchv1kTgP6NceZEuSinp2yDxea246nsb3NaBc_YAT_vlxXg9xVca97ljuCTmxtMEmOF370Z_EO7ADQNxwp1N1u7K3HVSyKQ0OLlaIdzLkYsSzKW4xBdDOPVP60ibF30MLgnOIIzuw_wd4gyEBRhbkICpVAmfkhWVxiTBkQTSXQvU"/>
+          <div class="absolute top-4 left-4 bg-primary/90 text-on-primary px-3 py-1 rounded-full text-xs font-semibold">Featured</div>
+        </div>
+        <div class="p-6 space-y-4 relative">
+          <div class="flex items-center gap-4 text-xs text-gray-500">
+            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">calendar_today</span> Oct 15, 2024</span>
+            <span class="bg-secondary/10 text-secondary px-2 py-0.5 rounded-full text-xs font-semibold">Academics</span>
+          </div>
+          <h3 class="text-headline-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Annual Science &amp; Technology Exhibition Set for November</h3>
+          <p class="text-sm text-gray-600">Students across all grades will showcase innovative projects in robotics, environmental science, and software development. Parents are cordially invited.</p>
+          <a href="#" class="inline-flex items-center text-primary font-semibold text-sm hover:underline">Read full story <span class="material-symbols-outlined text-[18px] ml-1">arrow_forward</span></a>
+          <div class="absolute bottom-0 left-0 w-full h-1 bg-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+        </div>
+      </article>
+
+      <!-- Smaller News Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <article class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition-shadow group">
+          <div class="h-48 w-full bg-gray-100 overflow-hidden">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Student receiving certificate at awards ceremony" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtvd3axELMsl8LGIm-hm-BAONWbwYEzzIaGgIDew5IwLNEFhLFew2h1Lujr7VLyhrgiY8WToMvaBmPi9CofMmuaeVT2_WVt0KPZ724RepZXeFSYGzzcdV9TqZihxOubStr2AWoqlWTA9zwNe974caw13uZovk3ZLSl4g5EVpI8l62gZ3JvQ96kWg6ek21UGS2WLrZxiJ9IUikFto6zQu9jOs-s4A9RdXlyWQJpJpPyxqhOymBBAccc43dIMt75QI7pcMLCLgZCirY"/>
+          </div>
+          <div class="p-5 flex-grow flex flex-col space-y-3">
+            <div class="flex items-center justify-between text-xs text-gray-500">
+              <span>Oct 12, 2024</span>
+              <span class="bg-primary/10 text-primary px-2 py-0.5 rounded-full text-xs font-semibold">Administration</span>
+            </div>
+            <h4 class="text-lg font-semibold text-on-surface group-hover:text-primary transition-colors">First Term Mid-Semester Reports Now Available</h4>
+            <p class="text-sm text-gray-600 flex-grow">Parents can access detailed progress reports via the student portal.</p>
+            <a href="#" class="text-secondary font-semibold text-sm hover:underline inline-flex items-center">Portal Login <span class="material-symbols-outlined text-[16px] ml-1">login</span></a>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition-shadow group">
+          <div class="h-48 w-full bg-gray-100 overflow-hidden">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Students competing in athletics on sports field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3zyAoIsS3X6OL8ysg_Mx-c-K1zcgA4eClHLFsOLNkpB1rPf-Lmv4kVYZ7e3fe_3Z2ONEHXyB4JQOA9rdML51hUEA0phaPX9FVVIOdmAT7VwMXyfPG9VKpFzpAgSBuXR0CmgEmwgzr6Fr9hxRVVeuJujMfiJaXdeVMYvyBEFN6A4VdmlGU5XpLFoTjUYZoieh_vjKgOcT-ba1TOUW9PI3H-aqBnJVsZgPppo1FLFWpBxzaIbWfaE_SZpg3t4Scci5O695x67TJIZM"/>
+          </div>
+          <div class="p-5 flex-grow flex flex-col space-y-3">
+            <div class="flex items-center justify-between text-xs text-gray-500">
+              <span>Oct 10, 2024</span>
+              <span class="bg-secondary/10 text-secondary px-2 py-0.5 rounded-full text-xs font-semibold">Sports</span>
+            </div>
+            <h4 class="text-lg font-semibold text-on-surface group-hover:text-primary transition-colors">Inter-House Athletics Competition Results</h4>
+            <p class="text-sm text-gray-600 flex-grow">Congratulations to Blue House for securing the overall championship trophy.</p>
+            <a href="#" class="text-primary font-semibold text-sm hover:underline inline-flex items-center">View Gallery <span class="material-symbols-outlined text-[16px] ml-1">photo_library</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="lg:col-span-4 space-y-8">
+      <!-- Upcoming Events -->
+      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+        <h2 class="text-title-lg font-semibold text-primary border-b border-gray-200 pb-2 mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined">event</span> Upcoming Events
+        </h2>
+        <div class="space-y-5">
+          <div class="flex gap-4 group cursor-pointer">
+            <div class="flex-shrink-0 w-14 h-14 bg-gray-50 rounded-xl flex flex-col items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+              <span class="text-xs font-semibold uppercase">Oct</span>
+              <span class="text-lg font-bold leading-none">24</span>
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Parent-Teacher Conference</h4>
+              <p class="text-xs text-gray-500 flex items-center gap-1 mt-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 09:00 AM - 03:00 PM</p>
+              <p class="text-xs text-gray-500 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">location_on</span> Main Hall</p>
+            </div>
+          </div>
+          <div class="flex gap-4 group cursor-pointer">
+            <div class="flex-shrink-0 w-14 h-14 bg-gray-50 rounded-xl flex flex-col items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+              <span class="text-xs font-semibold uppercase">Nov</span>
+              <span class="text-lg font-bold leading-none">05</span>
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Science Exhibition</h4>
+              <p class="text-xs text-gray-500 flex items-center gap-1 mt-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 10:00 AM - 04:00 PM</p>
+              <p class="text-xs text-gray-500 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">location_on</span> Science Block</p>
+            </div>
+          </div>
+          <div class="flex gap-4 group cursor-pointer">
+            <div class="flex-shrink-0 w-14 h-14 bg-gray-50 rounded-xl flex flex-col items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+              <span class="text-xs font-semibold uppercase">Dec</span>
+              <span class="text-lg font-bold leading-none">12</span>
+            </div>
+            <div>
+              <h4 class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">End of Year Ceremony</h4>
+              <p class="text-xs text-gray-500 flex items-center gap-1 mt-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 08:30 AM - 01:00 PM</p>
+              <p class="text-xs text-gray-500 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">location_on</span> Auditorium</p>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="block text-center w-full mt-6 py-2.5 border border-gray-300 text-primary rounded-full text-sm font-semibold hover:bg-gray-50 transition-colors">View Academic Calendar</a>
+      </div>
+
+      <!-- Achievement Spotlight -->
+      <div class="relative rounded-2xl overflow-hidden p-6 text-white bg-primary-container shadow-md">
+        <div class="absolute inset-0 opacity-20" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9JkxDF4dYdVOBBOgBelAhmcX2SHeuMNdDiFE_AXijkweY9yPLptu_QFzj5a9eBfQS_JkSJtlaJy2LLaf0B1s_Ti_VMRIlZ-GTZzpcIki42L7Kfw6BQjxG5npGzS-3H0rWUYrtS3wdYXz1MyY4WBNhuAiO9V6-YVcHhGdsVNmgMoAIcGeIZz6HIIikn9RsTQvyh9Oh8lEuav-gnL7slhcVinK_Q57rfLZQN-57UZQdDi78yY_8U-9DQUlTuwy1X6TNVxVmvOJzzSo'); background-size: cover; background-position: center;"></div>
+        <div class="relative z-10 space-y-4">
+          <div class="flex items-center gap-2 text-amber-300 text-xs font-semibold tracking-widest uppercase"><span class="material-symbols-outlined">stars</span> Achievement Spotlight</div>
+          <h3 class="text-headline-sm font-semibold">National Debate Champions</h3>
+          <p class="text-sm text-primary-fixed-dim">Our senior debate team secured first place at the National Interscholastic Debate Tournament.</p>
+          <a href="#" class="inline-block w-full bg-amber-400 text-on-tertiary-container py-2 rounded-full text-sm font-semibold text-center hover:bg-amber-300 transition-colors">Read Their Story</a>
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="bg-white rounded-2xl p-6 text-center space-y-4 shadow-sm border border-gray-100">
+        <span class="material-symbols-outlined text-4xl text-secondary">mark_email_unread</span>
+        <h3 class="text-title-lg font-semibold text-on-surface">Weekly Updates</h3>
+        <p class="text-sm text-gray-600">Get the latest school news and event reminders delivered to your inbox.</p>
+        <form class="space-y-3" onsubmit="event.preventDefault(); alert('Subscribed!');">
+          <input class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Enter your email address" type="email" required/>
+          <button class="w-full bg-primary text-on-primary h-12 rounded-xl font-semibold text-sm hover:bg-primary-container transition-colors shadow-sm" type="submit">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- Social Media -->
+      <div class="bg-white rounded-2xl border border-gray-100 p-6 text-center">
+        <h3 class="text-title-lg font-semibold text-on-surface mb-2">Connect With Us</h3>
+        <p class="text-sm text-gray-600 mb-4">Follow our social channels for daily glimpses into school life.</p>
+        <div class="h-32 bg-gray-50 rounded-xl flex items-center justify-center border border-dashed border-gray-300 text-gray-400 text-sm">
+          [ Social Media Feed Widget ]
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="bg-white border-t border-gray-100 mt-auto">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="col-span-1 md:col-span-2">
+      <h3 class="text-xl font-bold text-primary mb-4">Falalu &amp; Sons International</h3>
+      <p class="text-sm text-gray-500 max-w-xs">Committed to fostering growth through excellence and traditional academic rigor.</p>
+    </div>
+    <div>
+      <h4 class="text-sm font-semibold text-on-surface mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+        <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+        <li><a href="admissions.html" class="hover:text-primary transition-colors">Admissions</a></li>
+        <li><a href="academics.html" class="hover:text-primary transition-colors">Academics</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-sm font-semibold text-on-surface mb-4">More</h4>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="news.html" class="hover:text-primary transition-colors">School News</a></li>
+        <li><a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a></li>
+        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact Us</a></li>
+        <li><a href="#" class="hover:text-primary transition-colors">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-gray-100 py-4 text-center text-xs text-gray-400">
+    © 2024 Falalu and Sons International School Minna. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  });
+</script>
+</body>
+</html>

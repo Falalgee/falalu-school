@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Home - Falalu &amp; Sons International School</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-on-surface": "#f0f1f2","on-primary-fixed": "#410000","on-primary-container": "#ff8371",
+            "background": "#fafafa","surface-container": "#f5f5f5","surface": "#ffffff",
+            "on-tertiary": "#ffffff","on-secondary": "#ffffff","primary-container": "#7f1d1d",
+            "outline": "#8e706c","secondary-fixed": "#92fa83","on-secondary-container": "#00730d",
+            "surface-container-high": "#eeeeee","primary-fixed-dim": "#ffb4a8","primary": "#5e0000",
+            "secondary": "#006e0c","on-primary": "#ffffff","surface-container-highest": "#e5e5e5",
+            "tertiary-fixed-dim": "#e9c349","on-tertiary-fixed-variant": "#574500",
+            "surface-container-low": "#f9f9f9","on-secondary-fixed-variant": "#005307",
+            "secondary-container": "#8ff780","surface-dim": "#e0e0e0","tertiary-fixed": "#ffe088",
+            "primary-fixed": "#ffdad4","secondary-fixed-dim": "#77dd6a","on-surface-variant": "#5a413d",
+            "inverse-surface": "#2e3132","on-tertiary-container": "#4e3d00","outline-variant": "#e2bfb9",
+            "on-surface": "#171717","surface-tint": "#b22b1d","tertiary": "#735c00",
+            "on-error": "#ffffff","on-background": "#171717","on-secondary-fixed": "#002201",
+            "on-error-container": "#93000a","inverse-primary": "#ffb4a8","tertiary-container": "#cba72f",
+            "error-container": "#ffdad6","on-primary-fixed-variant": "#8f0f07","error": "#ba1a1a",
+            "on-tertiary-fixed": "#241a00","surface-variant": "#f5f5f5","surface-bright": "#ffffff",
+            "surface-container-lowest": "#ffffff"
+          },
+          borderRadius: { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
+          spacing: { "gutter": "24px", "margin-desktop": "40px", "margin-mobile": "16px", "base": "8px", "container-max": "1200px" },
+          fontFamily: {
+            "label-sm": ["Inter"], "headline-md": ["Playfair Display"], "display-lg-mobile": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"], "body-lg": ["Inter"], "body-md": ["Inter"],
+            "label-md": ["Inter"], "display-lg": ["Playfair Display"], "title-lg": ["Inter"]
+          },
+          fontSize: {
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+            "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+            "display-lg-mobile": ["36px", { lineHeight: "44px", fontWeight: "700" }],
+            "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+            "display-lg": ["52px", { lineHeight: "62px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "title-lg": ["20px", { lineHeight: "28px", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background antialiased font-body-md flex flex-col min-h-screen">
+
+<!-- Navigation -->
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md border-b border-gray-200/50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-12 py-4">
+    <a href="index.html" class="text-xl md:text-2xl font-headline-sm font-bold text-primary tracking-tight">Falalu &amp; Sons</a>
+    <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-on-surface-variant">
+      <a href="index.html" class="text-primary border-b-2 border-primary pb-1">Home</a>
+      <a href="about.html" class="hover:text-primary transition-colors">About</a>
+      <a href="admissions.html" class="hover:text-primary transition-colors">Admissions</a>
+      <a href="academics.html" class="hover:text-primary transition-colors">Academics</a>
+      <a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a>
+      <a href="news.html" class="hover:text-primary transition-colors">News</a>
+      <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="admissions.html" class="hidden sm:inline-flex items-center bg-primary text-on-primary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-container transition-colors shadow-sm">
+        Apply Now
+      </a>
+      <button id="mobile-menu-btn" class="lg:hidden text-on-surface p-2">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile menu panel -->
+  <div id="mobile-menu" class="lg:hidden hidden absolute top-full left-0 w-full bg-surface border-b border-gray-200/50 shadow-lg px-6 py-4 flex flex-col space-y-4">
+    <a href="index.html" class="text-primary font-semibold">Home</a>
+    <a href="about.html" class="text-on-surface-variant">About</a>
+    <a href="admissions.html" class="text-on-surface-variant">Admissions</a>
+    <a href="academics.html" class="text-on-surface-variant">Academics</a>
+    <a href="gallery.html" class="text-on-surface-variant">Gallery</a>
+    <a href="news.html" class="text-on-surface-variant">News</a>
+    <a href="contact.html" class="text-on-surface-variant">Contact</a>
+    <a href="admissions.html" class="bg-primary text-on-primary text-center py-2 rounded-full font-semibold mt-2">Apply Now</a>
+  </div>
+</header>
+
+<main class="flex-grow">
+  <!-- Hero Section -->
+  <section class="relative flex items-center justify-center py-32 md:py-48 px-6 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img class="w-full h-full object-cover" alt="Prestigious school campus with modern architecture and lush green lawns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWZJ4ZG1OFue_TVWaaXrfYUPpRlaGBcZi1XKQXUQXJQLmyegJK2MRH4gtNFI2ND2bjY3ddwnwkr0O7lfoVedfjkFNxQdxaXhidFbfWnRDhB7sNn8vvERzK-0_-jSeV-v1dfkX1X2vnebthguhSa6pQ80N8o2QT-JJdGA6I7UxrprKP8PeS9GhoyibpZM4Ucj1IYvGtfhY6fHwtkretHApZ-Ir0dhNzdiT3I3Pll1JqpQD3nYouxz1lvVMef_qPOyIjkszUzwsoGwA"/>
+      <div class="absolute inset-0 bg-black/50"></div>
+    </div>
+    <div class="relative z-10 text-center max-w-3xl mx-auto">
+      <h1 class="text-display-lg-mobile md:text-display-lg text-white font-bold mb-6 drop-shadow-sm">Excellence in Every Step</h1>
+      <p class="text-white/80 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">Nurturing minds, building character, and shaping the leaders of tomorrow at Falalu &amp; Sons International School Minna.</p>
+      <a href="admissions.html" class="inline-flex items-center bg-amber-400 text-on-tertiary-container px-8 py-4 rounded-full font-semibold text-sm hover:bg-amber-300 transition-colors shadow-lg">
+        Discover Our Programs
+        <span class="material-symbols-outlined ml-2">arrow_forward</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Welcome Section -->
+  <section class="py-24 md:py-32 max-w-7xl mx-auto px-6 md:px-12">
+    <div class="flex flex-col lg:flex-row gap-12 items-center bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
+      <div class="w-full lg:w-1/3 shrink-0 flex justify-center">
+        <img class="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full border-4 border-white shadow-lg" alt="Portrait of school principal Dr. Amina Falalu smiling warmly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAardSBhkD1d6w-7BoryUspIj-YOCmmbX59KVxzGoOW1oW44Jg-vyAnQT8ZSk1kTnnaTLfDaXlf_qgpvYqQ0okJGxcKmOXzhHxAHW8n9DIsm4VPUKhSRUh30_yDWMRs0p2oRUqAJd-aVnB9ckXXGUxOiQERBbThxdMrPXEp7aB9epgONAviGQ2xBmCUhWddvwKbgSmLgj04T0PjNSSpt01lzpxt3p1KVF_BbBCWOMn_hlzgHjKCAbTKQmAK-n22GV_eq9Tb_i_Wh-A"/>
+      </div>
+      <div class="w-full lg:w-2/3">
+        <h2 class="text-headline-md font-headline-md text-primary mb-4">Welcome to Our Community</h2>
+        <p class="text-body-md text-gray-600 mb-4 leading-relaxed">At Falalu &amp; Sons International School, we believe education is more than just academics; it is the foundation upon which strong characters and bright futures are built. Our dedicated staff is committed to providing a nurturing environment where every child can reach their full potential.</p>
+        <p class="text-body-md text-gray-600 mb-6">We invite you to explore our campus, meet our educators, and discover why we are the preferred choice for discerning parents in Minna.</p>
+        <p class="text-sm font-semibold text-primary/80 italic">— Dr. Amina Falalu, Principal</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-24 md:py-32 bg-gray-50 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-headline-md font-headline-md text-center text-primary mb-16">Why Choose Us</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-primary text-3xl">school</span>
+          </div>
+          <h3 class="text-title-lg font-semibold text-on-surface mb-3">Quality Education</h3>
+          <p class="text-body-md text-gray-600">A rigorous curriculum designed to challenge students and foster a lifelong love of learning, delivered by expert educators.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-secondary text-3xl">business_center</span>
+          </div>
+          <h3 class="text-title-lg font-semibold text-on-surface mb-3">Modern Facilities</h3>
+          <p class="text-body-md text-gray-600">State-of-the-art laboratories, expansive libraries, and advanced sports complexes to support holistic development.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 bg-tertiary/10 rounded-2xl flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-tertiary text-3xl">diversity_3</span>
+          </div>
+          <h3 class="text-title-lg font-semibold text-on-surface mb-3">Character Development</h3>
+          <p class="text-body-md text-gray-600">Instilling core values of integrity, respect, and resilience to prepare students for global citizenship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-24 md:py-32 bg-primary text-on-primary px-6 md:px-12">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div class="p-8">
+        <div class="text-5xl md:text-6xl font-bold text-amber-300 mb-2">500+</div>
+        <div class="text-lg font-medium text-primary-fixed-dim">Enrolled Students</div>
+      </div>
+      <div class="p-8 border-y md:border-y-0 md:border-x border-primary-container">
+        <div class="text-5xl md:text-6xl font-bold text-amber-300 mb-2">50+</div>
+        <div class="text-lg font-medium text-primary-fixed-dim">Qualified Teachers</div>
+      </div>
+      <div class="p-8">
+        <div class="text-5xl md:text-6xl font-bold text-amber-300 mb-2">100%</div>
+        <div class="text-lg font-medium text-primary-fixed-dim">Graduation Rate</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-white border-t border-gray-100 mt-auto">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="col-span-1 md:col-span-2">
+      <h3 class="text-xl font-bold text-primary mb-4">Falalu &amp; Sons International</h3>
+      <p class="text-sm text-gray-500 max-w-xs">Excellence in education, character in life. Shaping tomorrow's leaders today.</p>
+    </div>
+    <div>
+      <h4 class="text-sm font-semibold text-on-surface mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+        <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+        <li><a href="admissions.html" class="hover:text-primary transition-colors">Admissions</a></li>
+        <li><a href="academics.html" class="hover:text-primary transition-colors">Academics</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-sm font-semibold text-on-surface mb-4">More</h4>
+      <ul class="space-y-2 text-sm text-gray-600">
+        <li><a href="news.html" class="hover:text-primary transition-colors">School News</a></li>
+        <li><a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a></li>
+        <li><a href="contact.html" class="hover:text-primary transition-colors">Contact Us</a></li>
+        <li><a href="#" class="hover:text-primary transition-colors">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-gray-100 py-4 text-center text-xs text-gray-400">
+    © 2024 Falalu and Sons International School Minna. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  });
+</script>
+</body>
+</html>
